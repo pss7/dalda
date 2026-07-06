@@ -1,0 +1,216 @@
+@charset "UTF-8";
+
+/* 공통 */
+body.noScroll{overflow: hidden;}
+#wrap{overflow-x: hidden;}
+
+/* 공통 - 가운데영역 */
+.container{max-width: 1440px; margin: 0 auto; padding: 0 20px;}
+
+/* 공통 - 제목 */
+.title{margin-bottom: 24px; font-size: 56px; font-weight: 600; color: #111;}
+.text{font-size: 20px; color: #666;}
+
+@media (max-width: 1199px){
+
+  .title{font-size: 48px;}
+  .text{font-size: 18px;}
+
+}
+
+@media (max-width: 768px){
+
+  .title{margin-bottom: 18px; font-size: 40px;}
+  .text{font-size: 16px;}
+
+}
+
+@media (max-width: 480px){
+
+  .title{margin-bottom: 12px; font-size: 28px;}
+  .text{font-size: 14px;}
+
+}
+
+/* 공통 - 정렬 */
+.textCenter{text-align: center;}
+
+/* 공통 - 색상 */
+.textPrimary{color: #0F584B;}
+
+/* 공통 - 페이드업 애니메이션 */
+.fadeUp {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all .3s;
+}
+
+.active .fadeUp{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* 헤더 */
+#headerWrap{position: fixed; top:0; left:0; right:0; z-index: 999; transition: all .3s;}
+#headerWrap.scroll{background-color: rgba(0,0,0,.25); box-shadow: 0 10px 10px rgba(0,0,0,.1);}
+#headerWrap .headerLogoBox a,
+#headerWrap .headerLogoBox img{display: block;}
+#headerWrap .headerBox{display: flex; align-items: center; justify-content: space-between;}
+#headerWrap .headerDepth01{display: flex; align-items: center; gap: 0 0;}
+#headerWrap .headerDepth01 li h2 .headerLink{display: block; padding: 30px 55px; font-size: 18px; font-weight: 600; color: #fff; transition: all .3s;}  
+#headerWrap .headerDepth01 li:not(.headerContactList) h2 .headerLink:hover{color: #0F584B;}
+#headerWrap .headerDepth01 .headerContactList{margin-left: 40px;}
+#headerWrap .headerDepth01 .headerContactList h2 .headerLink{display: flex; align-items: center; justify-content: center; gap: 0 14px; width: 116px; height: 46px; padding: 0; border-radius: 8px; background-color: #0F584B; font-size: 16px;}
+#headerWrap .headerDepth01 .headerContactList h2 .headerLink::after{content: ''; width: 7px; height: 12px; background: url(../images/common/arrow_icon01.svg)no-repeat center;}
+#headerWrap .headerDepth01 .headerContactList h2 .headerLink:hover{width: 125px;}
+#headerWrap .headerMobileMenuBox{display: none;}
+
+@media (max-width: 1199px){
+
+  #headerWrap .headerBox{height: 80px;}
+  #headerWrap .headerLogoBox img{width: 80px;}
+  #headerWrap .headerNav{display: none;}
+  
+  /* 모바일메뉴 */
+  #headerWrap .headerMobileMenuBox{display: block; position: relative;}
+  #headerWrap .headerMobileMenu{width: 179px; padding: 6px 0; position: absolute; top:54px; right:0; border-radius: 12px; background-color: #F5F5F5; box-shadow: 0 4px 20px rgba(0,0,0,.1);}
+  #headerWrap .headerMobileDepth01 li .headerMobileLink{display: flex; align-items: center; gap: 0 8px; padding: 13px 0 13px 16px; color: #111; font-weight: 600; font-size: 14px;}
+  #headerWrap .headerMobileDepth01 li .headerMobileLink::before{content: ''; width: 4px; height: 4px; border-radius: 50%; background-color: #165B4E;} 
+  #headerWrap .headerMobileDepth01 .headerMobileContactList{padding: 10px 16px;}
+  #headerWrap .headerMobileDepth01 .headerMobileContactList .headerMobileLink{padding: 8px 0 8px 16px; display: flex; align-items: center; justify-content: center; gap: 0 14px; background-color: #165B4E; border-radius: 6px; color: #fff;}
+  #headerWrap .headerMobileDepth01 .headerMobileContactList .headerMobileLink::before{display: none;}
+  #headerWrap .headerMobileDepth01 .headerMobileContactList .headerMobileLink::after{content: ''; width: 7px; height: 12px; background: url(../images/common/arrow_icon01.svg)no-repeat center;}
+  #headerWrap .headerMobileBtn{position: relative; display: flex; justify-content: center;
+      align-items: center; width: 28px; height: 28px;}
+  #headerWrap .headerMobileBtn span{position: absolute; width: 21px;
+    height: 2px; border-radius: 30px; background: #fff; transition: all .3s;}
+  #headerWrap .headerMobileBtn span:nth-child(1){transform: translateY(-6px);}
+  #headerWrap .headerMobileBtn span:nth-child(2){transform: translateY(0);}
+  #headerWrap .headerMobileBtn span:nth-child(3){transform: translateY(6px);}
+  #headerWrap .headerMobileMenuBox.active .headerMobileBtn span:nth-child(1){transform: rotate(45deg);}
+  #headerWrap .headerMobileMenuBox.active .headerMobileBtn span:nth-child(2){opacity: 0;}
+  #headerWrap .headerMobileMenuBox.active .headerMobileBtn span:nth-child(3){transform: rotate(-45deg);}
+
+}
+
+@media (max-width: 480px){
+
+  #headerWrap .headerBox{height: 56px;}
+  #headerWrap .headerLogoBox img{width: 67px;}
+  #headerWrap .headerMobileMenu{top: 42px;}
+
+}
+
+/* 푸터 */
+#footerWrap{position: relative; padding: 60px 0; background-color: #2A2B2C;}
+#footerWrap .footerBox{display: flex;}
+#footerWrap .footerLogoBox{margin-right: 60px;}
+#footerWrap .footerLogoBox h1 img{display: block;}
+#footerWrap .footerLinkBox{display: flex; margin-bottom: 32px;}
+#footerWrap .footerLinkBox .footerLink{display: flex; align-items: center; color: #fff; font-size: 15px;}
+#footerWrap .footerLinkBox .footerLink::after{content: ''; margin: 0 16px; width: 1px; height: 12px; background-color: #767676;}
+#footerWrap .footerLinkBox .footerLink:last-child:after{display: none;}
+#footerWrap .footerInfoBox{margin-bottom: 8px; display: flex; flex-wrap: wrap; gap: 4px 0;}
+#footerWrap .footerInfoBox .footerInfoRow{display: flex; flex-wrap: wrap; width: 100%;}
+#footerWrap .footerInfo{display: flex; align-items: center;}
+#footerWrap .footerInfo::after{content: ''; margin: 0 10px; width: 1px; height: 12px; background-color: #767676;}
+#footerWrap .footerInfo:last-child:after{display: none;}
+#footerWrap .footerInfo .footerTitle{flex-shrink: 0; display: flex; align-items: center;}
+#footerWrap .footerInfo .footerTitle::after{content: ':'; margin: 0 5px;}
+#footerWrap .footerInfo .footerTitle,
+#footerWrap .footerInfo .footerText{font-size: 14px; color: #D4D4D8;}
+#footerWrap .footerInfoTextBox{width: calc(100% - 528px);}
+#footerWrap .footerInfoTextBox .copyright{display: block; color: #D4D4D8; font-size: 14px;}
+#footerWrap .footerInfoTextBox .copyright{display: block; color: #D4D4D8; font-size: 14px;}
+#footerWrap .footerInquiryBox{margin-right: 104px;}
+#footerWrap .footerInquiryBox .footerInquiryText{display: flex; align-items: center; gap: 0 8px; margin-bottom: 16px; font-size: 18px; font-weight: 600; color: #fff; transition: all .3s;}
+#footerWrap .footerInquiryBox .footerInquiryText:hover{transform: translateX(7px);}
+#footerWrap .footerInquiryBox .footerInquiryText::before{content: ''; flex-shrink: 0; width: 20px; height: 20px;} 
+#footerWrap .footerInquiryBox .footerInquiryPhone::before{background: url(../images/common/phone_icon.svg)no-repeat center;}
+#footerWrap .footerInquiryBox .footerInquiryEmail::before{background: url(../images/common/email_icon.svg)no-repeat center;} 
+#footerWrap .footerInquiryBox .footerInquiryText:last-child{margin-bottom: 0;}
+#footerWrap .footerSnsBox{display: flex; gap: 0 12px;}
+#footerWrap .footerSnsBox a img{transition: all .3s;}
+#footerWrap .footerSnsBox a:hover img{transform: translateY(-5px);}
+#footerWrap .footerSnsBox a,
+#footerWrap .footerSnsBox a img{display: block;}
+
+@media (max-width: 1199px){
+
+  #footerWrap .footerBox{flex-direction: column;}
+  #footerWrap .footerLinkBox{position: absolute; top:0; left:20px;}
+  #footerWrap .footerInquiryBox{order: 0; margin: 0 0 28px;}
+  #footerWrap .footerInquiryBox .footerInquiryText{justify-content: center;}
+  #footerWrap .footerInfoTextBox{order: 1; width: 100%;}
+  #footerWrap .footerLogoBox{margin: 0; margin-bottom: 30px;}
+  #footerWrap .footerSnsBox{position: absolute; top:0; right:20px;}
+  #footerWrap .footerInfo{width: 100%; justify-content: center;}
+  #footerWrap .footerInfoBox{gap:0;}
+  #footerWrap .footerInfo::after{display: none;}
+  #footerWrap .footerLogoBox h1 img{margin: 0 auto;}
+  #footerWrap .footerInfoTextBox .copyright{text-align: center;}
+
+}
+
+@media (max-width: 480px){
+
+  #footerWrap{padding: 46px 0 40px;}
+  #footerWrap .footerInquiryBox .footerInquiryText{margin-bottom: 12px;}
+  #footerWrap .footerLinkBox .footerLink{font-size: 12px;}
+  #footerWrap .footerLinkBox .footerLink::after{margin: 0 12px; height: 10px;}
+  #footerWrap .footerLogoBox h1 img{width: 62px;}
+  #footerWrap .footerInfoBox{margin-bottom: 4px;}
+  #footerWrap .footerInfo .footerTitle, #footerWrap .footerInfo .footerText{font-size: 12px;}
+  #footerWrap .footerInfoTextBox .copyright{font-size: 11px;}
+  #footerWrap .footerSnsBox a img{width: 26px;}
+  
+}
+
+/* 퀵버튼 */
+#aside{display: none; position: fixed; bottom: 40px; right:40px; z-index: 999;}
+#aside .asideBtn{display: block; margin-bottom: 12px; position: relative; width: 56px; height: 56px; border-radius: 20px; background-color: #0F584B; box-shadow: 0 4px 10px rgba(0,0,0,.1);}
+#aside .asideBtn:last-child{margin-bottom: 0;}
+#aside .asideBtn::after{content: ''; width: 28px; height: 28px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+#aside .asideBtn.asideTopBtn::after{background: url(../images/common/arrow_icon03.svg)no-repeat center / contain;}
+#aside .asideBtn.asideEmailBtn::after{background: url(../images/common/email_icon02.svg)no-repeat center / contain;}
+#aside .asideBtn.asidePhoneBtn::after{background: url(../images/common/phone_icon02.svg)no-repeat center / contain;}
+
+@media (max-width: 1199px){
+
+  #aside{right: 16px;}
+  #aside .asideBtn{margin-bottom: 8px; width: 48px; height: 48px; border-radius: 50%;}
+  #aside .asideBtn::after{width: 24px; height: 24px;}
+
+}
+
+@media (max-width: 480px){
+
+  #aside .asideBtn{width: 36px; height: 36px; }
+  #aside .asideBtn::after{width: 20px; height: 20px;}
+
+}
+
+
+/* 폼 */
+textarea{display: block; padding: 16px; border: 1px solid #D4D4D8; border-radius: 8px; font-size: 18px;}
+input{height: 56px; padding-left: 16px; border: 1px solid #D4D4D8; border-radius: 8px; font-size: 18px;}
+input::placeholder{color: #767676;}
+input#customChk[type="checkbox"]:checked + label::before{background: url(../images/main/chk_icon.svg)no-repeat center / contain; border: 1px solid #0F584B;}
+input#customChk[type="checkbox"] + label{position: relative; padding-left: 26px; color: #767676; cursor: pointer;}
+input#customChk[type="checkbox"] + label::before{content: ''; position: absolute; top:0; left:0; width: 18px; height: 18px; border-radius: 3px; border: 1px solid #D4D4D8; background-color: #fff;}
+input#customChk[type="checkbox"] + label span{text-decoration: underline;}
+
+@media (max-width: 768px){
+
+  input{height: 48px; font-size: 16px;}
+  
+}
+
+@media (max-width: 480px){
+
+  input#customChk[type="checkbox"] + label::before{top: -1px; width: 16px; height: 16px;}
+  input#customChk[type="checkbox"] + label{padding-left: 22px; font-size: 12px;}
+  
+}
