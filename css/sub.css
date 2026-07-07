@@ -150,6 +150,7 @@
   .contentDetailWrap .recognitionDetailBox .detailDesc01{font-size: 24px;}
   .contentDetailWrap .recognitionDetailBox .detailDesc02{margin-bottom: 22px; font-size: 40px;}
   .contentDetailWrap .recognitionDetailBox .detailDesc03{font-size: 18px;}
+  .contentDetailWrap .recognitionDetailBox .recognitionDetailInfoList li br{display: none;}
 
 }
 
