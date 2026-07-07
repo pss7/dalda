@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <meta name="Author" content="" />
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <title>달다</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/admin.js"></script>
+</head>
+
+<body>
+
+    <div id="adminWrap" class="adminMain">
+
+        <!-- 어드민 헤더 영역 -->
+        <header id="adminHeaderWrap">
+
+            <div class="adminLogoBox">
+                <h1>
+                    <img src="images/common/logo02.svg" alt="dalda">
+                </h1>
+            </div>
+            <!-- //adminLogoBox -->
+
+            <div class="adminUtilBox">
+
+                <button type="button" class="adminNotificationBtn active" aria-label="알림">
+                </button>
+
+            </div>
+            <!-- //adminHUtilBox -->
+
+        </header>
+        <!-- //어드민 헤더 영역 -->
+
+        <main>
+
+            <!-- 어드민 레이아웃 -->
+            <div class="adminBox">
+
+                <!-- 어드민 콘텐츠 영역-->
+                <div id="adminContentBox">
+
+                    <div class="adminMainBox">
+
+                        <div class="adminMainTopBox">
+                            <h2>
+                                에너지파크 DX 관제
+                            </h2>
+                            <span class="adminMainTopStatus">
+                                실시간 연동중
+                            </span>
+                        </div>
+                        <!-- //adminMainTopBox -->
+
+                        <div class="adminMainSummaryItemBox">
+
+                            <div class="adminMainSummaryItem adminMainSummaryItem01">
+                                <h3 class="adminMainSummaryTtitle">
+                                    1월 누적 반업량 (달다 DX 집계)
+                                </h3>
+                                <span class="adminMainSummaryValue">
+                                    <strong>9,660.13</strong>
+                                    건
+                                </span>
+                            </div>
+
+                            <div class="adminMainSummaryItem adminMainSummaryItem02">
+                                <h3 class="adminMainSummaryTtitle">
+                                    금일 반입 (실시간)
+                                </h3>
+                                <span class="adminMainSummaryValue">
+                                    <strong>94.8</strong>
+                                    톤
+                                </span>
+                            </div>
+
+                            <div class="adminMainSummaryItem adminMainSummaryItem03">
+                                <h3 class="adminMainSummaryTtitle">
+                                    입고 차량 (당일)
+                                </h3>
+                                <span class="adminMainSummaryValue">
+                                    <strong>5</strong>
+                                    대
+                                </span>
+                            </div>
+
+                            <div class="adminMainSummaryItem adminMainSummaryItem04">
+                                <h3 class="adminMainSummaryTtitle">
+                                    주요 반입 품목 비율
+                                </h3>
+
+                                <ul class="adminMainRatioList">
+                                    <li class="adminMainRatioItem adminMainRatioItem01">
+                                        <div class="adminMainRatioInfo">
+                                            <span class="adminMainRatioTitle">기타폐수</span>
+                                            <strong class="adminMainRatioValue">37.0%</strong>
+                                        </div>
+
+                                        <div class="adminMainRatioBar">
+                                            <span class="adminMainRatioFill" style="width:37%;"></span>
+                                        </div>
+                                    </li>
+
+                                    <li class="adminMainRatioItem adminMainRatioItem02">
+                                        <div class="adminMainRatioInfo">
+                                            <span class="adminMainRatioTitle">폐합성수지(원형)</span>
+                                            <strong class="adminMainRatioValue">17.2%</strong>
+                                        </div>
+
+                                        <div class="adminMainRatioBar">
+                                            <span class="adminMainRatioFill" style="width:17.2%;"></span>
+                                        </div>
+                                    </li>
+
+                                    <li class="adminMainRatioItem adminMainRatioItem03">
+                                        <div class="adminMainRatioInfo">
+                                            <span class="adminMainRatioTitle">그밖의 폐수처리오니</span>
+                                            <strong class="adminMainRatioValue">12.3%</strong>
+                                        </div>
+
+                                        <div class="adminMainRatioBar">
+                                            <span class="adminMainRatioFill" style="width:12.3%;"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!-- //adminMainSummaryItemBox -->
+
+
+                        <div class="adminMainFeedBox">
+                            <div class="adminMainFeedHeader">
+                                <h3 class="adminMainFeedTitle">실시간 입고 피드</h3>
+                                <button type="button" class="adminMainFeedSort">최신순</button>
+                            </div>
+
+                            <ul class="adminMainFeedList">
+                                <li class="adminMainFeedItem">
+
+                                    <div class="adminMainFeedTop">
+                                        <div class="adminMainFeedInfo">
+                                            <span class="adminMainFeedTime">16:41</span>
+                                            <span class="adminMainFeedVehicle">차량 2833</span>
+                                        </div>
+
+                                        <strong class="adminMainFeedWeight">22.59톤</strong>
+                                    </div>
+
+                                    <div class="adminMainFeedBottom">
+                                        <span class="adminMainFeedWaste">그밖의 공정오니</span>
+                                        <span class="adminMainFeedType">지정(고상)</span>
+                                    </div>
+
+                                </li>
+                                  <li class="adminMainFeedItem">
+
+                                    <div class="adminMainFeedTop">
+                                        <div class="adminMainFeedInfo">
+                                            <span class="adminMainFeedTime">15:20</span>
+                                            <span class="adminMainFeedVehicle">차량 1953</span>
+                                        </div>
+
+                                        <strong class="adminMainFeedWeight">22.76톤</strong>
+                                    </div>
+
+                                    <div class="adminMainFeedBottom">
+                                        <span class="adminMainFeedWaste">기타폐수</span>
+                                        <span class="adminMainFeedType">고농도</span>
+                                    </div>
+
+                                </li>
+                                  <li class="adminMainFeedItem">
+
+                                    <div class="adminMainFeedTop">
+                                        <div class="adminMainFeedInfo">
+                                            <span class="adminMainFeedTime">13:05</span>
+                                            <span class="adminMainFeedVehicle">차량 9029</span>
+                                        </div>
+
+                                        <strong class="adminMainFeedWeight">15.50톤</strong>
+                                    </div>
+
+                                    <div class="adminMainFeedBottom">
+                                        <span class="adminMainFeedWaste">폐합성수지(파쇄)</span>
+                                        <span class="adminMainFeedType">재활용</span>
+                                    </div>
+
+                                </li>
+                                  <li class="adminMainFeedItem">
+
+                                    <div class="adminMainFeedTop">
+                                        <div class="adminMainFeedInfo">
+                                            <span class="adminMainFeedTime">11:14</span>
+                                            <span class="adminMainFeedVehicle">차량 2260</span>
+                                        </div>
+
+                                        <strong class="adminMainFeedWeight">11.29톤</strong>
+                                    </div>
+
+                                    <div class="adminMainFeedBottom">
+                                        <span class="adminMainFeedWaste">폐합성수지(원형)</span>
+                                        <span class="adminMainFeedType">원배출자</span>
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //adminMainFeedBox -->
+                         
+                    </div>
+                    <!-- //adminMainBox -->
+
+                </div>
+                <!-- //어드민 콘텐츠 영역-->
+
+            </div>
+            <!-- //어드민 레이아웃 -->
+
+        </main>
+
+        <!-- 어드민 푸터 영역 -->
+        <footer id="adminFooterWrap">
+
+            <nav class="adminFooterNav" aria-label="하단 메뉴">
+                <ul class="adminFooterList">
+
+                    <li class="adminFooterItem">
+                        <a href="#" class="adminFooterHome adminFooterLink active">
+                            홈
+                        </a>
+                    </li>
+
+                    <li class="adminFooterItem">
+                        <a href="#" class="adminFooterHistory adminFooterLink">
+                            계근내역
+                        </a>
+                    </li>
+
+                    <li class="adminFooterItem">
+                        <a href="#" class="adminFooterView adminFooterLink">
+                            더보기
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </footer>
+        <!-- //어드민 푸터 영역 -->
+
+    </div>
+    <!-- //adminWrap -->
+
+</body>
+
+</html>

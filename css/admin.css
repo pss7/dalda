@@ -1,0 +1,279 @@
+@charset "UTF-8";
+#adminWrap{min-height: 100vh; display: flex; flex-direction: column; background-color: #3F4348;}
+main{display: flex; flex: 1;}
+.adminBox{display: flex; flex: 1;}
+
+/* 관리자 헤더 */
+#adminHeaderWrap{padding: 14px 40px; display: flex; align-items: center; justify-content: space-between;}
+#adminHeaderWrap .adminLogoBox{display: flex; align-items: center; gap: 0 25px;}
+#adminHeaderWrap .adminLogoBox h1 img{display: block;}
+#adminHeaderWrap h2{font-weight: 600; font-size: 24px; color: #fff;}
+#adminHeaderWrap .adminUtilBox{display: flex; align-items: center; gap: 0 24px;}
+#adminHeaderWrap .adminUtilBox .adminNotificationBtn{position: relative; width: 28px; height: 28px; background: url(../images/common/admin_notification_icon.svg)no-repeat center;}
+#adminHeaderWrap .adminUtilBox .adminNotificationBtn.active::after{content: ''; position: absolute; top:0; right:5px; width: 7px; height: 7px; border-radius: 50%; background-color: #FF3F3F;}
+#adminHeaderWrap .adminUtilBox .adminUserBox{display: flex; align-items: center; gap: 0 8px;}
+#adminHeaderWrap .adminUtilBox .adminUserBox img{display: block;}
+#adminHeaderWrap .adminUtilBox .adminUserBox .adminUserName{color: #fff; font-size: 14px; color: #fff;}
+#adminHeaderWrap .adminUtilBox .adminAuthBtn{display: flex; align-items: center; gap: 0 4px; padding: 8px 12px; border-radius: 50px; background-color: #4A4E53; font-size: 14px; color: #fff;}
+#adminHeaderWrap .adminUtilBox .adminAuthBtn::before{content: ''; width: 18px; height: 18px; background: url(../images/common/admin_logout_icon.svg)no-repeat center;} 
+
+@media (max-width: 1199px){
+
+  #adminHeaderWrap{padding: 14px 20px;}
+  #adminHeaderWrap h2{font-size: 20px;}
+
+  #adminHeaderWrap .adminUtilBox .adminUserBox,
+  #adminHeaderWrap .adminUtilBox .adminAuthBtn{display: none;}
+
+}
+
+@media (max-width: 768px){
+
+  #adminHeaderWrap h2{font-size: 18px;}
+  #adminHeaderWrap .adminLogoBox{gap: 0 15px;}
+  #adminHeaderWrap .adminLogoBox h1 img{width: 80px;}
+
+}
+
+@media (max-width: 480px){
+
+  #adminHeaderWrap{padding: 11px 20px;}
+  #adminHeaderWrap h2{display: none;}
+  #adminHeaderWrap .adminLogoBox h1 img{width: 67px;}
+
+}
+
+/* 관리자 메뉴 */
+#adminLeftMenuBox{flex-shrink: 0; padding: 24px 16px 10px; width: 240px; height: 100%;}
+#adminLeftMenuBox .adminTitleBox{margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #4A4E53;}
+#adminLeftMenuBox .adminTitleBox h2{padding: 12px 10px; font-size: 14px; font-weight: 500; color: #fff; border-radius: 6px; background-color: #4A4E53; text-align: center;}
+#adminLeftMenuBox .adminDepth01 li{margin-bottom: 12px;}
+#adminLeftMenuBox .adminDepth01 li:last-child{margin-bottom: 0;}
+#adminLeftMenuBox .adminDepth01 li a{padding: 16px 10px 16px 16px; display: flex; align-items: center; gap: 0 8px; color: #aaa; font-size: 18px; border-radius: 8px; transition: all .3s;}
+
+#adminLeftMenuBox .adminDepth01 li a::before{content: ''; width: 24px; height: 24px;}
+#adminLeftMenuBox .adminDepth01 li .adminMenuIcon01::before{background: url(../images/common/admin_menu_icon01.svg)no-repeat center;}
+#adminLeftMenuBox .adminDepth01 li .adminMenuIcon02::before{background: url(../images/common/admin_menu_icon02.svg)no-repeat center;}
+#adminLeftMenuBox .adminDepth01 li .adminMenuIcon03::before{background: url(../images/common/admin_menu_icon03.svg)no-repeat center;}
+#adminLeftMenuBox .adminDepth01 li .adminMenuIcon04::before{background: url(../images/common/admin_menu_icon04.svg)no-repeat center;}
+#adminLeftMenuBox .adminDepth01 li .adminMenuIcon05::before{background: url(../images/common/admin_menu_icon05.svg)no-repeat center;}
+#adminLeftMenuBox .adminDepth01 li .adminMenuIcon06::before{background: url(../images/common/admin_menu_icon06.svg)no-repeat center;}
+#adminLeftMenuBox .adminDepth01 li .adminMenuIcon07::before{background: url(../images/common/admin_menu_icon07.svg)no-repeat center;}
+#adminLeftMenuBox .adminDepth01 li a:hover,
+#adminLeftMenuBox .adminDepth01 li a.active{color: #20C85E; background-color: #111;}
+
+#adminLeftMenuBox .adminDepth01 li a:hover.adminMenuIcon01::before,
+#adminLeftMenuBox .adminDepth01 li a.active.adminMenuIcon01::before{background: url(../images/common/admin_menu_on_icon01.svg)no-repeat center;}
+
+#adminLeftMenuBox .adminDepth01 li a:hover.adminMenuIcon02::before,
+#adminLeftMenuBox .adminDepth01 li a.active.adminMenuIcon02::before{background: url(../images/common/admin_menu_on_icon02.svg)no-repeat center;}
+
+#adminLeftMenuBox .adminDepth01 li a:hover.adminMenuIcon03::before,
+#adminLeftMenuBox .adminDepth01 li a.active.adminMenuIcon03::before{background: url(../images/common/admin_menu_on_icon03.svg)no-repeat center;}
+
+#adminLeftMenuBox .adminDepth01 li a:hover.adminMenuIcon04::before,
+#adminLeftMenuBox .adminDepth01 li a.active.adminMenuIcon04::before{background: url(../images/common/admin_menu_on_icon04.svg)no-repeat center;}
+
+#adminLeftMenuBox .adminDepth01 li a:hover.adminMenuIcon05::before,
+#adminLeftMenuBox .adminDepth01 li a.active.adminMenuIcon05::before{background: url(../images/common/admin_menu_on_icon05.svg)no-repeat center;}
+
+#adminLeftMenuBox .adminDepth01 li a:hover.adminMenuIcon06::before,
+#adminLeftMenuBox .adminDepth01 li a.active.adminMenuIcon06::before{background: url(../images/common/admin_menu_on_icon06.svg)no-repeat center;}
+
+#adminLeftMenuBox .adminDepth01 li a:hover.adminMenuIcon07::before,
+#adminLeftMenuBox .adminDepth01 li a.active.adminMenuIcon07::before{background: url(../images/common/admin_menu_on_icon07.svg)no-repeat center;}
+
+
+@media (max-width: 1199px){
+
+  #adminLeftMenuBox{display: none;}
+
+}
+
+/* 관리자 콘텐츠 */
+#adminContentBox{flex:1; padding: 40px 40px 60px; overflow: hidden;}
+#adminContentBox .adminDashboardSummaryBox{margin-bottom: 28px; padding: 40px 80px; background-color: #F2F7FF; border-radius: 20px;}
+#adminContentBox .adminDashboardSummaryList{display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px;}
+#adminContentBox .adminDashboardSummaryList li{position: relative; padding-right: 60px; flex: 1;}
+#adminContentBox .adminDashboardSummaryList li::after{content: ''; width: 56px; height: 56px; position: absolute; top:0; right:0;}
+#adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryText{position: relative; padding-left: 32px; margin-bottom: 12px;}
+#adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryText::before{content:''; position: absolute; top:0; left:0; bottom: 0; width: 2px; border-radius: 50px;}
+#adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryTitle{display: block; margin-bottom: 5px; font-size: 18px; color: #111;}
+#adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryValue{display: block; font-size: 28px; font-weight: 600;}
+#adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryValue span{font-size: 15px; color: #111;}
+#adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryDesc{display: block; padding-left: 32px;font-size: 14px; color: #767676;}
+#adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryDesc strong{font-weight: 400; color: #15803D;}
+#adminContentBox .adminDashboardSummaryList li.adminDashboardSummaryItem01 .adminDashboardSummaryText::before{background-color: #2F7BF5; box-shadow: 0 0 4px rgba(47, 123, 245, 0.5);}
+#adminContentBox .adminDashboardSummaryList li.adminDashboardSummaryItem02 .adminDashboardSummaryText::before{background-color: #15803D; box-shadow: 0 0 4px rgba(21, 128, 61, 0.5);}
+#adminContentBox .adminDashboardSummaryList li.adminDashboardSummaryItem03 .adminDashboardSummaryText::before{background-color: #F59D09; box-shadow: 0 0 4px rgba(245, 157, 9, 0.5);}
+#adminContentBox .adminDashboardSummaryList li.adminDashboardSummaryItem04 .adminDashboardSummaryText::before{background-color: #EF3A3A; box-shadow: 0 0 4px rgba(239, 58, 58, 0.5);}
+#adminContentBox .adminDashboardSummaryList li.adminDashboardSummaryItem01::after{background: url(../images/common/admin_icon01.svg)no-repeat center / contain;}
+#adminContentBox .adminDashboardSummaryList li.adminDashboardSummaryItem02::after{background: url(../images/common/admin_icon02.svg)no-repeat center / contain;}
+#adminContentBox .adminDashboardSummaryList li.adminDashboardSummaryItem03::after{background: url(../images/common/admin_icon03.svg)no-repeat center / contain;}
+#adminContentBox .adminDashboardSummaryList li.adminDashboardSummaryItem04::after{background: url(../images/common/admin_icon04.svg)no-repeat center / contain;}
+#adminContentBox .adminDashboardFeedBox,
+#adminContentBox .adminDashboardChartItem{padding: 32px; background-color: #fff; border-radius: 20px; border: 1px solid #E5E5EC;}
+#adminContentBox .adminDashboardFeedBox h3{font-weight: 500; font-size: 20px; color: #111;}
+#adminContentBox .adminDashboardChartItem h3{margin-bottom: 24px; font-weight: 500; font-size: 20px; color: #111;}
+#adminContentBox .adminDashboardChartBox{position: relative; display: flex; flex-direction: column; gap: 20px; z-index: 1;}
+#adminContentBox .adminDashboardChartBox::after{content: ''; position: absolute; top:104px; left:-40px; right:-40px; bottom: -100%; background-color: #F3F4F6; border-radius: 30px 30px 0 0; z-index: -1;}
+#adminContentBox .adminDashboardChartRow{display: grid; grid-template-columns: 2fr 3fr; gap: 20px;}
+#adminContentBox .adminDashboardChartRow02{grid-template-columns: 3fr 2fr;}
+#adminContentBox .adminDashboardFeedBox .adminDashboardFeedTopBox{margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; gap: 0 20px;}
+#adminContentBox .adminDashboardFeedBox{position: relative;}
+#adminContentBox .adminDashboardFeedBox .adminDashboardFeedList li{display: flex; align-items: center; gap: 0 10px; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #F1F1F5;}
+#adminContentBox .adminDashboardFeedBox .adminDashboardFeedList li:last-child{border-bottom: 0;}
+#adminContentBox .adminDashboardFeedBox .adminDashboardFeedContent{font-size: 15px; color: #111;}
+#adminContentBox .adminDashboardFeedBox .adminDashboardFeedTime{flex-shrink: 0; font-size: 15px; color: #767676;}
+#adminContentBox .adminDashboardFeedBox .adminDashboardFeedStatus{flex-shrink: 0; padding: 2px 8px; font-size: 12px; font-weight: 600; color: #15803D; border-radius: 50px; background-color: #D6F0DF;}
+
+@media (max-width: 1600px) {
+
+  #adminContentBox .adminDashboardSummaryList{grid-template-columns: repeat(2, 1fr);}
+
+ }
+
+ @media (max-width: 1199px){
+
+  #adminContentBox{padding: 16px 20px 70px;}
+  #adminContentBox .adminDashboardSummaryBox{margin-bottom: 32px; padding: 40px 50px;}
+  #adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryValue{font-size: 26px;}
+
+  #adminContentBox .adminDashboardChartRow{display: block;}
+  #adminContentBox .adminDashboardChartBox{gap: 0; padding-top: 32px;}
+  #adminContentBox .adminDashboardChartItem{margin-bottom: 12px;}
+  #adminContentBox .adminDashboardChartBox::after{top:0; left:-20px; right:-20px; border-radius: 20px;}
+  
+ }
+
+  @media (max-width: 768px){
+
+  #adminContentBox .adminDashboardSummaryBox{padding: 30px; border-radius:16px;}
+  #adminContentBox .adminDashboardSummaryList li{padding-right: 10px;}
+  #adminContentBox .adminDashboardSummaryList li::after{display: none; width: 40px; height: 40px;}
+  #adminContentBox .adminDashboardSummaryList{gap: 30px;}
+  #adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryTitle{font-size: 16px;}
+  #adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryValue{font-size: 22px;}
+
+  #adminContentBox .adminDashboardFeedBox h3,
+  #adminContentBox .adminDashboardChartItem h3{font-size: 18px;}
+  #adminContentBox .adminDashboardFeedBox, 
+  #adminContentBox .adminDashboardChartItem{padding: 26px; border-radius: 16px;}
+
+ }
+
+ @media (max-width: 576px){
+
+  #adminContentBox .adminDashboardSummaryBox{padding: 20px;}
+  #adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryValue{font-size: 20px;}
+  #adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryText{padding-left: 16px; margin-bottom: 8px;}
+  #adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryDesc{padding-left: 16px;}
+  
+ }
+
+ @media (max-width: 480px){
+
+  #adminContentBox .adminDashboardSummaryBox{padding: 0; background:0;}
+  #adminContentBox .adminDashboardSummaryList{gap: 8px;}
+  #adminContentBox .adminDashboardSummaryList li{padding: 16px 16px 16px 0; background-color: #F2F7FF; border-radius: 12px;}
+
+  #adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryTitle{margin-bottom: 2px;}
+  #adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryTitle,
+  #adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryValue span{font-size: 12px;}
+  #adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryDesc{font-size: 10px;}
+
+  #adminContentBox .adminDashboardFeedBox .adminDashboardFeedTopBox{margin-bottom: 20px;}
+  #adminContentBox .adminDashboardFeedBox h3{font-size: 16px;}
+  #adminContentBox .adminDashboardChartItem h3{margin-bottom: 20px; font-size: 16px;}
+  #adminContentBox .adminDashboardFeedBox, 
+  #adminContentBox .adminDashboardChartItem{padding: 20px;}
+  #adminContentBox .adminDashboardFeedBox .adminDashboardFeedList li{padding: 8px 0;}
+  #adminContentBox .adminDashboardFeedBox .adminDashboardFeedTime{display: none;}
+ 
+ }
+ 
+ /* 관리자 푸터 */
+ #adminFooterWrap{display: none; position: fixed; left:0; bottom: 0; right: 0; padding: 0 12px; margin-top: auto; border: 1px solid #F1F1F5; border-width: 1px 1px 0 0; border-radius: 20px 20px 0 0; background-color: #fff; z-index: 999; box-shadow: 0 -3px 8px rgba(0,0,0,.06);}
+ #adminFooterWrap .adminFooterList{display: flex;}
+ #adminFooterWrap .adminFooterList li{flex: 1;}
+ #adminFooterWrap .adminFooterList li a{padding: 8px 0; display: flex; flex-direction: column; align-items: center; font-size: 10px; font-weight: 600; color: #999;}
+ #adminFooterWrap .adminFooterList li a::before{content: ''; width: 24px; height: 24px; gap: 2px 0;}
+#adminFooterWrap .adminFooterList li a.adminFooterHome::before{background: url(../images/common/home_icon.svg)no-repeat center;}
+#adminFooterWrap .adminFooterList li a.adminFooterHistory::before{background: url(../images/common/history_icon.svg)no-repeat center;}
+#adminFooterWrap .adminFooterList li a.adminFooterView::before{background: url(../images/common/view_icon.svg)no-repeat center;}
+#adminFooterWrap .adminFooterList li a.active{color: #15502A;}
+#adminFooterWrap .adminFooterList li a.active.adminFooterHome::before{background: url(../images/common/home_on_icon.svg)no-repeat center;}
+#adminFooterWrap .adminFooterList li a.active.adminFooterHistory::before{background: url(../images/common/history_on_icon.svg)no-repeat center;}
+#adminFooterWrap .adminFooterList li a.active.adminFooterView::before{background: url(../images/common/view_on_icon.svg)no-repeat center;}
+
+@media (max-width: 1199px){
+
+  #adminFooterWrap{display: block;}
+
+}
+
+/* 관지라 메인 */
+#adminWrap.adminMain #adminContentBox{padding: 16px 20px 70px;}
+#adminWrap.adminMain #adminHeaderWrap{padding: 14px 20px;}
+#adminWrap.adminMain #adminHeaderWrap .adminLogoBox h1 img{width: auto;}
+#adminWrap.adminMain{background-color: #F3F4F6;}
+#adminWrap.adminMain #adminFooterWrap{display: block;}
+#adminWrap.adminMain .adminNotificationBtn{background: url(../images/common/admin_notification_icon02.svg)no-repeat center;}
+#adminWrap.adminMain .adminMainTopBox{margin-bottom: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; justify-content: space-between;}
+#adminWrap.adminMain .adminMainTopBox h2{color: #222; font-weight: 600; font-size: 20px; }
+#adminWrap.adminMain .adminMainTopBox .adminMainTopStatus{flex-shrink: 0; display: flex; align-items: center; gap: 0 4px; padding: 1px 8px; background-color: #D6F0DF; color: #15803D; border-radius: 50px; font-size: 12px; font-weight: 500;}
+#adminWrap.adminMain .adminMainTopBox .adminMainTopStatus::before{content: ''; width: 6px; height: 6px; border-radius: 50%; background-color: #15803D;}
+#adminWrap.adminMain .adminMainSummaryItem{padding: 12px 22px; border-radius: 12px; background-color: #fff; }
+#adminWrap.adminMain .adminMainSummaryItem .adminMainSummaryTtitle{margin-bottom: 2px; font-size: 16px; font-weight: 600; color: #505050; font-weight: 400;}
+#adminWrap.adminMain .adminMainSummaryItem .adminMainSummaryValue{font-size: 12px;}
+#adminWrap.adminMain .adminMainSummaryItem .adminMainSummaryValue strong{font-weight: 600; font-size: 20px;}
+#adminWrap.adminMain .adminMainSummaryItem01{background-color: #2D6CD4;}
+#adminWrap.adminMain .adminMainSummaryItem01 .adminMainSummaryTtitle,
+#adminWrap.adminMain .adminMainSummaryItem01 .adminMainSummaryValue{color: #fff;}
+#adminWrap.adminMain .adminMainSummaryItem02 .adminMainSummaryValue{color: #2D6CD4;}
+#adminWrap.adminMain .adminMainSummaryItem04 {padding: 20px;}
+#adminWrap.adminMain .adminMainSummaryItem04 .adminMainSummaryTtitle{margin-bottom: 16px; font-weight: 600; font-size: 16px;}
+#adminWrap.adminMain .adminMainSummaryItemBox{margin-bottom: 32px; display: grid;
+    grid-template-columns: repeat(2, 1fr); grid-template-areas:
+        "adminMainSummaryItem01 adminMainSummaryItem01"
+        "adminMainSummaryItem02 adminMainSummaryItem03"
+        "adminMainSummaryItem04 adminMainSummaryItem04"; gap: 8px;}
+#adminWrap.adminMain .adminMainSummaryItem01{grid-area:adminMainSummaryItem01;}
+#adminWrap.adminMain .adminMainSummaryItem02{grid-area:adminMainSummaryItem02;}
+#adminWrap.adminMain .adminMainSummaryItem03{grid-area:adminMainSummaryItem03;}
+#adminWrap.adminMain .adminMainSummaryItem04{grid-area:adminMainSummaryItem04;}
+#adminWrap.adminMain .adminMainRatioList li{margin-bottom: 16px;}
+#adminWrap.adminMain .adminMainRatioList li:last-child{margin-bottom: 0;}
+#adminWrap.adminMain .adminMainRatioList li .adminMainRatioInfo{margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;}
+#adminWrap.adminMain .adminMainRatioList li .adminMainRatioTitle{color: #505050; font-size: 12px;}
+#adminWrap.adminMain .adminMainRatioList li .adminMainRatioValue{font-size: 12px; font-weight: 700;}
+#adminWrap.adminMain .adminMainRatioList li .adminMainRatioBar{position: relative; height: 6px; border-radius: 50px; background-color: #E9E9E9; overflow: hidden;}
+#adminWrap.adminMain .adminMainRatioList li .adminMainRatioFill{position: absolute; top:0; left:0; bottom: 0; border-radius: 50px;}
+#adminWrap.adminMain .adminMainRatioList li.adminMainRatioItem01 .adminMainRatioValue{color: #0284C7;}
+#adminWrap.adminMain .adminMainRatioList li.adminMainRatioItem01 .adminMainRatioFill{background-color: #0284C7;}
+#adminWrap.adminMain .adminMainRatioList li.adminMainRatioItem02 .adminMainRatioValue{color: #0FB780;}
+#adminWrap.adminMain .adminMainRatioList li.adminMainRatioItem02 .adminMainRatioFill{background-color: #0FB780;}
+#adminWrap.adminMain .adminMainRatioList li.adminMainRatioItem03 .adminMainRatioValue{color: #F59E0B;}
+#adminWrap.adminMain .adminMainRatioList li.adminMainRatioItem03 .adminMainRatioFill{background-color: #F59E0B;}
+#adminWrap.adminMain .adminMainFeedBox{position: relative; padding: 32px 0 0; background-color: #fff; z-index: 1;}
+#adminWrap.adminMain .adminMainFeedBox::after{content: ''; position: absolute; top: 0; left: -20px;
+    right: -20px; bottom: -100%; background-color: #fff; border-radius: 30px 30px 0 0; z-index: -1;}
+#adminWrap.adminMain .adminMainFeedBox .adminMainFeedHeader{margin-bottom: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; justify-content: space-between;}
+#adminWrap.adminMain .adminMainFeedBox .adminMainFeedTitle{font-size: 18px; font-weight: 600; color: #222;}
+#adminWrap.adminMain .adminMainFeedBox .adminMainFeedSort{color: #767676; font-size: 12px;}
+#adminWrap.adminMain .adminMainFeedBox .adminMainFeedList li{margin-bottom: 12px; padding: 16px; border: 1px solid #E5E5EC; border-radius: 12px;}
+#adminWrap.adminMain .adminMainFeedBox .adminMainFeedList li:last-child{margin-bottom: 0;}
+#adminWrap.adminMain .adminMainFeedBox .adminMainFeedTop{margin-bottom: 4px; display: flex; align-items: center; justify-content: space-between; gap: 0 20px;}
+#adminWrap.adminMain .adminMainFeedBox .adminMainFeedInfo{display: flex; align-items: center;}
+#adminWrap.adminMain .adminMainFeedBox .adminMainFeedTime,
+#adminWrap.adminMain .adminMainFeedBox .adminMainFeedVehicle{color: #999; font-size: 12px; font-weight: 500;}
+#adminWrap.adminMain .adminMainFeedBox .adminMainFeedWeight{flex-shrink: 0; font-size: 16px; font-weight: 600; color: #2D6CD4;}
+#adminWrap.adminMain .adminMainFeedBox .adminMainFeedBottom{display: flex; align-items: center; justify-content: space-between; gap: 0 20px;}
+#adminWrap.adminMain .adminMainFeedBox .adminMainFeedWaste{font-size: 14px; font-weight: 600; color: #222;}
+#adminWrap.adminMain .adminMainFeedBox .adminMainFeedType{padding: 2px 6px; flex-shrink: 0; font-size: 12px; font-weight: 500; color: #666; border-radius: 50px; background-color: #F7FAF9;}
+
+@media (max-width: 1199px){
+
+  #adminWrap.adminMain .adminMainFeedBox::after{border-radius: 20px;}
+
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <meta name="Author" content="" />
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <title>달다</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/admin.js"></script>
+</head>
+
+<body>
+
+    <div id="adminWrap" class="admin">
+
+        <!-- 어드민 헤더 영역 -->
+        <header id="adminHeaderWrap">
+
+            <div class="adminLogoBox">
+                <h1>
+                    <img src="images/common/logo.svg" alt="dalda">
+                </h1>
+                <h2>
+                    폐기물 계근 자동화 플랫폼
+                </h2>
+            </div>
+            <!-- //adminLogoBox -->
+
+            <div class="adminUtilBox">
+
+                <button type="button" class="adminNotificationBtn active" aria-label="알림">
+                </button>
+
+                <div class="adminUserBox">
+                    <div class="adminUserImg">
+                        <img src="images/common/admin_img.png" alt="">
+                    </div>
+                    <span class="adminUserName">홍길동(관리자)</span>
+                </div>
+
+                <button type="button" class="adminAuthBtn">
+                    로그아웃
+                </button>
+
+            </div>
+            <!-- //adminHUtilBox -->
+
+        </header>
+        <!-- //어드민 헤더 영역 -->
+
+        <main>
+
+            <!-- 어드민 레이아웃 -->
+            <div class="adminBox">
+
+                <!-- 어드민 왼쪽 영역 -->
+                <aside id="adminLeftMenuBox">
+
+                    <div class="adminTitleBox">
+                        <h2>
+                            에너지파크 DX 관제
+                        </h2>
+                    </div>
+
+                    <nav>
+                        <ul class="adminDepth01">
+                            <li>
+                                <a href="#" class="adminMenuIcon01 active">
+                                    대시보드
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="adminMenuIcon02">
+                                    계근 관리
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="adminMenuIcon03">
+                                    차량 관리
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="adminMenuIcon04">
+                                    데이터 관리
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="adminMenuIcon05">
+                                    올바로 연동
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="adminMenuIcon06">
+                                    통계 분석
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="adminMenuIcon07">
+                                    설정
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+                <!-- //어드민 왼쪽 영역 -->
+
+                <!-- 어드민 콘텐츠 영역-->
+                <div id="adminContentBox">
+
+                    <section class="adminDashboardSummaryBox">
+                        <ul class="adminDashboardSummaryList">
+                            <li class="adminDashboardSummaryItem adminDashboardSummaryItem01">
+                                <div class="adminDashboardSummaryText">
+                                    <span class="adminDashboardSummaryTitle">총 입고 중량 (1월 누적)</span>
+                                    <strong class="adminDashboardSummaryValue">3,571.65<span>톤</span></strong>
+                                </div>
+                                <span class="adminDashboardSummaryDesc">지난달 대비 <strong>12.4% 증가</strong> 안정세</span>
+                            </li>
+
+                            <li class="adminDashboardSummaryItem adminDashboardSummaryItem02">
+                                <div class="adminDashboardSummaryText">
+                                    <span class="adminDashboardSummaryTitle">자동 계근 완료</span>
+                                    <strong class="adminDashboardSummaryValue">301<span>건</span></strong>
+                                </div>
+                                <span class="adminDashboardSummaryDesc"><strong>100%</strong> 무인 계근 처리</span>
+                            </li>
+
+                            <li class="adminDashboardSummaryItem adminDashboardSummaryItem03">
+                                <div class="adminDashboardSummaryText">
+                                    <span class="adminDashboardSummaryTitle">AI 인식 성공률</span>
+                                    <strong class="adminDashboardSummaryValue">98.7<span>%</span></strong>
+                                </div>
+                                <span class="adminDashboardSummaryDesc">주간·야간 평균 인식률 기준</span>
+                            </li>
+
+                            <li class="adminDashboardSummaryItem adminDashboardSummaryItem04">
+                                <div class="adminDashboardSummaryText">
+                                    <span class="adminDashboardSummaryTitle">올바로 연동 건수</span>
+                                    <strong class="adminDashboardSummaryValue">297<span>건</span></strong>
+                                </div>
+                                <span class="adminDashboardSummaryDesc">자동 등록 성공률 <strong>99.8%</strong></span>
+                            </li>
+                        </ul>
+                    </section>
+                    <!-- //adminDashboardSummaryBox -->
+
+                    <section class="adminDashboardChartBox">
+
+                        <div class="adminDashboardChartRow adminDashboardChartRow01">
+                            <div class="adminDashboardChartItem adminDashboardItem01">
+                                <h3>
+                                    오늘의 처리 유형별 중량 비중
+                                </h3>
+                            </div>
+
+                            <div class="adminDashboardChartItem adminDashboardItem02">
+                                <h3>
+                                    주요 적요(업체 성격)별 총 입고량 현황
+                                </h3>
+                            </div>
+                        </div>
+
+                        <div class="adminDashboardChartRow adminDashboardChartRow02">
+
+                            <div class="adminDashboardChartItem adminDashboardItem03">
+                                <h3>
+                                    1월 상순 주요 일자별 폐기물 반입 추이 차트
+                                </h3>
+                            </div>
+
+                            <div class="adminDashboardFeedBox adminDashboardItem04">
+
+                                <div class="adminDashboardFeedTopBox">
+                                    <h3>
+                                        🔔 실시간 반입 관제 피드
+                                    </h3>
+                                    <span class="adminDashboardFeedStatus">정상 활동</span>
+                                </div>
+
+                                <ul class="adminDashboardFeedList">
+                                    <li class="adminDashboardFeedItem">
+                                        <p class="adminDashboardFeedContent">🚛 [가성소다] 1528 차량 <strong>8.96톤</strong> 반입 완료
+                                        </p>
+                                        <span class="adminDashboardFeedTime">3분 전</span>
+                                    </li>
+                                    <li class="adminDashboardFeedItem">
+                                        <p class="adminDashboardFeedContent">🏭 [그밖의공정오니] 2833 차량 <strong>22.59톤</strong> 사급
+                                            입고</p>
+                                        <span class="adminDashboardFeedTime">12분 전</span>
+                                    </li>
+                                    <li class="adminDashboardFeedItem">
+                                        <p class="adminDashboardFeedContent">💧 [기타폐수] 5566 차량 <strong>20.77톤</strong> 고농도 처리
+                                        </p>
+                                        <span class="adminDashboardFeedTime">45분 전</span>
+                                    </li>
+                                    <li class="adminDashboardFeedItem">
+                                        <p class="adminDashboardFeedContent">💊 [의료기관기저귀] 8456 차량 <strong>3.77톤</strong> 입고
+                                            완료</p>
+                                        <span class="adminDashboardFeedTime">1시간 전</span>
+                                    </li>
+                                    <li class="adminDashboardFeedItem">
+                                        <p class="adminDashboardFeedContent">🚚 [폐합성수지] 6298 차량 <strong>16.00톤</strong> 재활용
+                                            입고</p>
+                                        <span class="adminDashboardFeedTime">3시간 전</span>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    </section>
+                    <!-- //adminChartBox -->
+
+                </div>
+                <!-- //어드민 콘텐츠 영역-->
+
+            </div>
+            <!-- //어드민 레이아웃 -->
+
+        </main>
+
+        <!-- 어드민 푸터 영역 -->
+        <footer id="adminFooterWrap">
+
+            <nav class="adminFooterNav" aria-label="하단 메뉴">
+                <ul class="adminFooterList">
+
+                    <li class="adminFooterItem">
+                        <a href="#" class="adminFooterHome adminFooterLink active">
+                            홈
+                        </a>
+                    </li>
+
+                    <li class="adminFooterItem">
+                        <a href="#" class="adminFooterHistory adminFooterLink">
+                            계근내역
+                        </a>
+                    </li>
+
+                    <li class="adminFooterItem">
+                        <a href="#" class="adminFooterView adminFooterLink">
+                            더보기
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </footer>
+        <!-- //어드민 푸터 영역 -->
+
+    </div>
+    <!-- //adminWrap -->
+
+</body>
+
+</html>
