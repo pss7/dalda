@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/slick.css">
     <script src="js/jquery-1.12.4.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/admin.js"></script>
@@ -159,18 +161,75 @@
                     <section class="adminDashboardChartBox">
 
                         <div class="adminDashboardChartRow adminDashboardChartRow01">
+
                             <div class="adminDashboardChartItem adminDashboardItem01">
-                                <h3>
-                                    오늘의 처리 유형별 중량 비중
-                                </h3>
+
+                                <div class="adminDashboardChartTopBox">
+                                    <h3>
+                                        오늘의 처리 유형별 중량 비중
+                                    </h3>
+                                    <span>
+                                        단위 : %
+                                    </span>
+                                </div>
+
+                                <div class="adminDashboardChartContent">
+
+                                    <div class="adminDashboardPieChart">
+                                        <canvas id="processChart"></canvas>
+                                    </div>
+
+                                    <ul class="adminDashboardLegendList">
+
+                                        <li>
+                                            <span class="adminDashboardLegendText legendColor01">고농도 폐수</span>
+                                        </li>
+
+                                        <li>
+                                            <span class="adminDashboardLegendText legendColor02">재활용 수지</span>
+                                        </li>
+
+                                        <li>
+                                            <span class="adminDashboardLegendText legendColor03">원배출자 물량</span>
+                                        </li>
+
+                                        <li>
+                                            <span class="adminDashboardLegendText legendColor04">관급 오니</span>
+                                        </li>
+
+                                        <li>
+                                            <span class="adminDashboardLegendText legendColor05">사급 오니</span>
+                                        </li>
+
+                                        <li>
+                                            <span class="adminDashboardLegendText legendColor06">기타(고철 등)</span>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
                             </div>
+                            <!-- //adminDashboardChartItem -->
 
                             <div class="adminDashboardChartItem adminDashboardItem02">
-                                <h3>
-                                    주요 적요(업체 성격)별 총 입고량 현황
-                                </h3>
+                                <div class="adminDashboardChartTopBox">
+                                    <h3>
+                                        주요 적요(업체 성격)별 총 입고량 현황
+                                    </h3>
+                                    <span>
+                                        단위 : 톤(Ton)
+                                    </span>
+                                </div>
+
+                                <div class="adminDashboardBarChart">
+                                    <canvas id="companyChart"></canvas>
+                                </div>
+
                             </div>
+                            <!-- //adminDashboardChartItem -->
+
                         </div>
+                        <!-- //adminDashboardChartRow -->
 
                         <div class="adminDashboardChartRow adminDashboardChartRow02">
 
@@ -179,6 +238,7 @@
                                     1월 상순 주요 일자별 폐기물 반입 추이 차트
                                 </h3>
                             </div>
+                            <!-- //adminDashboardChartItem -->
 
                             <div class="adminDashboardFeedBox adminDashboardItem04">
 
@@ -191,34 +251,43 @@
 
                                 <ul class="adminDashboardFeedList">
                                     <li class="adminDashboardFeedItem">
-                                        <p class="adminDashboardFeedContent">🚛 [가성소다] 1528 차량 <strong>8.96톤</strong> 반입 완료
+                                        <p class="adminDashboardFeedContent">🚛 [가성소다] 1528 차량 <strong>8.96톤</strong> 반입
+                                            완료
                                         </p>
                                         <span class="adminDashboardFeedTime">3분 전</span>
                                     </li>
                                     <li class="adminDashboardFeedItem">
-                                        <p class="adminDashboardFeedContent">🏭 [그밖의공정오니] 2833 차량 <strong>22.59톤</strong> 사급
-                                            입고</p>
+                                        <p class="adminDashboardFeedContent">🏭 [그밖의공정오니] 2833 차량
+                                            <strong>22.59톤</strong> 사급
+                                            입고
+                                        </p>
                                         <span class="adminDashboardFeedTime">12분 전</span>
                                     </li>
                                     <li class="adminDashboardFeedItem">
-                                        <p class="adminDashboardFeedContent">💧 [기타폐수] 5566 차량 <strong>20.77톤</strong> 고농도 처리
+                                        <p class="adminDashboardFeedContent">💧 [기타폐수] 5566 차량 <strong>20.77톤</strong>
+                                            고농도 처리
                                         </p>
                                         <span class="adminDashboardFeedTime">45분 전</span>
                                     </li>
                                     <li class="adminDashboardFeedItem">
-                                        <p class="adminDashboardFeedContent">💊 [의료기관기저귀] 8456 차량 <strong>3.77톤</strong> 입고
+                                        <p class="adminDashboardFeedContent">💊 [의료기관기저귀] 8456 차량 <strong>3.77톤</strong>
+                                            입고
                                             완료</p>
                                         <span class="adminDashboardFeedTime">1시간 전</span>
                                     </li>
                                     <li class="adminDashboardFeedItem">
-                                        <p class="adminDashboardFeedContent">🚚 [폐합성수지] 6298 차량 <strong>16.00톤</strong> 재활용
+                                        <p class="adminDashboardFeedContent">🚚 [폐합성수지] 6298 차량 <strong>16.00톤</strong>
+                                            재활용
                                             입고</p>
                                         <span class="adminDashboardFeedTime">3시간 전</span>
                                     </li>
                                 </ul>
 
                             </div>
+                            <!-- //adminDashboardFeedBox -->
+
                         </div>
+                        <!-- //adminDashboardChartRow -->
 
                     </section>
                     <!-- //adminChartBox -->
@@ -263,6 +332,236 @@
 
     </div>
     <!-- //adminWrap -->
+
+    <script>
+
+        //원형 차트
+        const ctx = document.getElementById('processChart');
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    '고농도 폐수',
+                    '재활용 수지',
+                    '원배출자 물량',
+                    '관급 오니',
+                    '사급 오니',
+                    '기타(고철 등)'
+                ],
+                datasets: [{
+                    data: [28, 22, 18, 15, 10, 7],
+                    backgroundColor: [
+                        '#8B5CF6',
+                        '#22C55E',
+                        '#F59E0B',
+                        '#3B82F6',
+                        '#EC4899',
+                        '#94A3B8'
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '40%',
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                }
+            }
+        });
+
+        //바 차트
+        const mobile = window.innerWidth <= 768;
+        const tablet = window.innerWidth <= 1024;
+
+        const dashedGrid = {
+            id: 'dashedGrid',
+
+            beforeDraw(chart) {
+
+                const { ctx, chartArea, scales } = chart;
+                const scale = mobile ? scales.x : scales.y;
+
+                if (!scale) return;
+
+                ctx.save();
+
+                ctx.strokeStyle = '#E5E7EB';
+                ctx.lineWidth = 1;
+                ctx.setLineDash([4, 4]);
+
+                scale.ticks.forEach((tick, index) => {
+
+                    const pos = scale.getPixelForTick(index);
+
+                    ctx.beginPath();
+
+                    if (mobile) {
+
+                        ctx.moveTo(pos, chartArea.top);
+                        ctx.lineTo(pos, chartArea.bottom);
+
+                    } else {
+
+                        ctx.moveTo(chartArea.left, pos);
+                        ctx.lineTo(chartArea.right, pos);
+
+                    }
+
+                    ctx.stroke();
+
+                });
+
+                ctx.restore();
+
+            }
+        };
+
+        const companyCtx = document.getElementById('companyChart');
+
+        new Chart(companyCtx, {
+
+            type: 'bar',
+
+            plugins: [dashedGrid],
+
+            data: {
+
+                labels: [
+                    ['고농도', '폐수'],
+                    ['재활용', '합성수지'],
+                    ['원배출자', '직접계약'],
+                    ['관급', '하수오니'],
+                    ['사급', '공정오니'],
+                    ['지정', '고상 폐광유물']
+                ],
+
+                datasets: [{
+
+                    data: [
+                        1350,
+                        1180,
+                        960,
+                        720,
+                        540,
+                        320
+                    ],
+
+                    backgroundColor: '#2D6CD4',
+
+                    borderRadius:
+                        mobile ? 6 :
+                            tablet ? 6 : 8,
+
+                    barThickness:
+                        mobile ? 20 :
+                            tablet ? 28 :
+                                undefined,
+
+                    maxBarThickness:
+                        mobile ? 20 :
+                            tablet ? 28 :
+                                46,
+
+                    categoryPercentage:
+                        mobile ? 0.7 :
+                            tablet ? 0.75 :
+                                0.55,
+
+                    barPercentage:
+                        mobile ? 0.8 :
+                            0.85
+
+                }]
+
+            },
+
+            options: {
+                clip: false,
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: false,
+                indexAxis: mobile ? 'y' : 'x',
+
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+
+                    tooltip: {
+                        enabled: true
+                    }
+                },
+
+                scales: {
+
+                    x: {
+                        beginAtZero: true,
+                        max: mobile ? 1400 : undefined,
+
+                        border: {
+                            display: true,
+                            color: '#999',
+                            width: 1
+                        },
+
+                        grid: {
+                            display: false
+                        },
+
+                        ticks: {
+                            color: '#111',
+                            autoSkip: false,
+                            stepSize: 200,
+                            padding:
+                                tablet ? 14 : 10,
+                            maxRotation:
+                                tablet ? 35 : 0,
+                            minRotation:
+                                tablet ? 35 : 0,
+                            font: {
+                                size:
+                                    tablet ? 11 : 13
+                            }
+                        }
+                    },
+
+                    y: {
+                        beginAtZero: true,
+                        max: mobile ? undefined : 1400,
+                        border: {
+                            display: true,
+                            color: '#999',
+                            width: 1
+                        },
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#767676',
+                            autoSkip: false,
+                            padding:
+                                tablet ? 14 : 10,
+                            font: {
+                                size:
+                                    mobile ? 10 : 13
+                            }
+                        }
+                    }
+                }
+            }
+
+        });
+
+    </script>
 
 </body>
 

@@ -114,8 +114,51 @@ main{display: flex; flex: 1;}
 #adminContentBox .adminDashboardFeedBox,
 #adminContentBox .adminDashboardChartItem{padding: 32px; background-color: #fff; border-radius: 20px; border: 1px solid #E5E5EC;}
 #adminContentBox .adminDashboardFeedBox h3{font-weight: 500; font-size: 20px; color: #111;}
-#adminContentBox .adminDashboardChartItem h3{margin-bottom: 24px; font-weight: 500; font-size: 20px; color: #111;}
+#adminContentBox .adminDashboardChartItem h3{font-weight: 500; font-size: 20px; color: #111;}
 #adminContentBox .adminDashboardChartBox{position: relative; display: flex; flex-direction: column; gap: 20px; z-index: 1;}
+#adminContentBox .adminDashboardChartBox .adminDashboardChartContent{display:flex; align-items:center;
+    justify-content: center; /*flex-wrap: wrap;*/ gap:32px 70px;}
+#adminContentBox .adminDashboardChartBox .adminDashboardPieChart{width:200px; height:200px;}
+#adminContentBox .adminDashboardChartBox .adminDashboardChartTopBox{margin-bottom: 24px; justify-content: space-between; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 20px;}
+#adminContentBox .adminDashboardChartBox .adminDashboardChartTopBox span{font-size: 14px; color: #505050;}
+#adminContentBox .adminDashboardChartBox .adminDashboardLegendList li{margin-bottom:8px;}
+#adminContentBox .adminDashboardChartBox .adminDashboardLegendList li:last-child{margin-bottom: 0;}
+#adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText{display:flex; gap:0 8px;  font-size: 14px; color: #111;}
+#adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText::before{content: ''; margin: 4px 0; width: 12px; height: 12px; border-radius: 2px;}
+#adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText.legendColor01::before{background:#8B5CF6;}
+#adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText.legendColor02::before{background:#22C55E;}
+#adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText.legendColor03::before{background:#F59E0B;}
+#adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText.legendColor04::before{background:#3B82F6;}
+#adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText.legendColor05::before{background:#EC4899;}
+#adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText.legendColor06::before{background:#94A3B8;}
+
+
+
+
+
+
+
+
+
+#adminContentBox .adminDashboardChartBox .adminDashboardBarChart{height: 203px;}
+#adminContentBox .adminDashboardChartBox .adminDashboardBarChart canvas{width:100% !important; height:100% !important;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #adminContentBox .adminDashboardChartBox::after{content: ''; position: absolute; top:104px; left:-40px; right:-40px; bottom: -100%; background-color: #F3F4F6; border-radius: 30px 30px 0 0; z-index: -1;}
 #adminContentBox .adminDashboardChartRow{display: grid; grid-template-columns: 2fr 3fr; gap: 20px;}
 #adminContentBox .adminDashboardChartRow02{grid-template-columns: 3fr 2fr;}
@@ -136,6 +179,9 @@ main{display: flex; flex: 1;}
  @media (max-width: 1199px){
 
   #adminContentBox{padding: 16px 20px 70px;}
+  
+  #adminContentBox .adminDashboardChartBox .adminDashboardChartContent{gap: 32px;}
+
   #adminContentBox .adminDashboardSummaryBox{margin-bottom: 32px; padding: 40px 50px;}
   #adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryValue{font-size: 26px;}
 
@@ -160,6 +206,10 @@ main{display: flex; flex: 1;}
   #adminContentBox .adminDashboardFeedBox, 
   #adminContentBox .adminDashboardChartItem{padding: 26px; border-radius: 16px;}
 
+  #adminContentBox .adminDashboardBarChart{height:360px;}
+
+  #adminContentBox .adminDashboardChartBox .adminDashboardBarChart{height: 300px;}
+
  }
 
  @media (max-width: 576px){
@@ -173,6 +223,10 @@ main{display: flex; flex: 1;}
 
  @media (max-width: 480px){
 
+  #adminContentBox .adminDashboardChartBox .adminDashboardChartTopBox span{font-size: 10px;}
+  #adminContentBox .adminDashboardChartBox .adminDashboardPieChart{width: 160px; height: 160px;}
+  #adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText{gap: 0 6px; font-size: 12px;}
+
   #adminContentBox .adminDashboardSummaryBox{padding: 0; background:0;}
   #adminContentBox .adminDashboardSummaryList{gap: 8px;}
   #adminContentBox .adminDashboardSummaryList li{padding: 16px 16px 16px 0; background-color: #F2F7FF; border-radius: 12px;}
@@ -182,14 +236,16 @@ main{display: flex; flex: 1;}
   #adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryValue span{font-size: 12px;}
   #adminContentBox .adminDashboardSummaryList li .adminDashboardSummaryDesc{font-size: 10px;}
 
-  #adminContentBox .adminDashboardFeedBox .adminDashboardFeedTopBox{margin-bottom: 20px;}
-  #adminContentBox .adminDashboardFeedBox h3{font-size: 16px;}
-  #adminContentBox .adminDashboardChartItem h3{margin-bottom: 20px; font-size: 16px;}
+  #adminContentBox .adminDashboardFeedBox h3,
+  #adminContentBox .adminDashboardChartItem h3{font-size: 16px;}
+  #adminContentBox .adminDashboardFeedBox .adminDashboardFeedTopBox
+  #adminContentBox .adminDashboardChartBox .adminDashboardChartTopBox{margin-bottom: 20px; }
   #adminContentBox .adminDashboardFeedBox, 
   #adminContentBox .adminDashboardChartItem{padding: 20px;}
   #adminContentBox .adminDashboardFeedBox .adminDashboardFeedList li{padding: 8px 0;}
   #adminContentBox .adminDashboardFeedBox .adminDashboardFeedTime{display: none;}
- 
+  #adminContentBox .adminDashboardChartBox .adminDashboardItem02 .adminDashboardChartTopBox{margin-bottom: 0;}
+   
  }
  
  /* 관리자 푸터 */
