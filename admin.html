@@ -385,57 +385,28 @@
 
         const dashedGrid = {
             id: 'dashedGrid',
-
             beforeDraw(chart) {
-
                 const { ctx, chartArea, scales } = chart;
                 const scale = mobile ? scales.x : scales.y;
-
                 if (!scale) return;
-
                 ctx.save();
-
                 ctx.strokeStyle = '#E5E7EB';
                 ctx.lineWidth = 1;
                 ctx.setLineDash([4, 4]);
-
-                scale.ticks.forEach((tick, index) => {
-
-                    const pos = scale.getPixelForTick(index);
-
+                scale.ticks.forEach((_, i) => {
+                    const pos = scale.getPixelForTick(i);
                     ctx.beginPath();
-
-                    if (mobile) {
-
-                        ctx.moveTo(pos, chartArea.top);
-                        ctx.lineTo(pos, chartArea.bottom);
-
-                    } else {
-
-                        ctx.moveTo(chartArea.left, pos);
-                        ctx.lineTo(chartArea.right, pos);
-
-                    }
-
+                    mobile ? (ctx.moveTo(pos, chartArea.top), ctx.lineTo(pos, chartArea.bottom)) : (ctx.moveTo(chartArea.left, pos), ctx.lineTo(chartArea.right, pos));
                     ctx.stroke();
-
                 });
-
                 ctx.restore();
-
             }
         };
 
-        const companyCtx = document.getElementById('companyChart');
-
-        new Chart(companyCtx, {
-
+        new Chart(document.getElementById('companyChart'), {
             type: 'bar',
-
             plugins: [dashedGrid],
-
             data: {
-
                 labels: [
                     ['고농도', '폐수'],
                     ['재활용', '합성수지'],
@@ -444,122 +415,55 @@
                     ['사급', '공정오니'],
                     ['지정', '고상 폐광유물']
                 ],
-
                 datasets: [{
-
-                    data: [
-                        1350,
-                        1180,
-                        960,
-                        720,
-                        540,
-                        320
-                    ],
-
+                    data: [1350, 1180, 960, 720, 540, 320],
                     backgroundColor: '#2D6CD4',
-
-                    borderRadius:
-                        mobile ? 6 :
-                            tablet ? 6 : 8,
-
-                    barThickness:
-                        mobile ? 20 :
-                            tablet ? 28 :
-                                undefined,
-
-                    maxBarThickness:
-                        mobile ? 20 :
-                            tablet ? 28 :
-                                46,
-
-                    categoryPercentage:
-                        mobile ? 0.7 :
-                            tablet ? 0.75 :
-                                0.55,
-
-                    barPercentage:
-                        mobile ? 0.8 :
-                            0.85
-
+                    borderRadius: mobile ? 6 : 8,
+                    barThickness: mobile ? 20 : tablet ? 28 : undefined,
+                    maxBarThickness: 46,
+                    categoryPercentage: mobile ? .7 : tablet ? .75 : .55,
+                    barPercentage: mobile ? .8 : .85
                 }]
-
             },
-
             options: {
-                clip: false,
                 responsive: true,
                 maintainAspectRatio: false,
                 animation: false,
                 indexAxis: mobile ? 'y' : 'x',
-
                 plugins: {
-                    legend: {
-                        display: false
-                    },
-
-                    tooltip: {
-                        enabled: true
-                    }
+                    legend: { display: false },
+                    tooltip: { enabled: true }
                 },
-
                 scales: {
-
                     x: {
                         beginAtZero: true,
                         max: mobile ? 1400 : undefined,
-
-                        border: {
-                            display: true,
-                            color: '#999',
-                            width: 1
-                        },
-
-                        grid: {
-                            display: false
-                        },
-
+                        border: { display: true, color: '#999' },
+                        grid: { display: false },
                         ticks: {
                             color: '#111',
                             autoSkip: false,
                             stepSize: 200,
-                            padding:
-                                tablet ? 14 : 10,
-                            maxRotation:
-                                tablet ? 35 : 0,
-                            minRotation:
-                                tablet ? 35 : 0,
-                            font: {
-                                size:
-                                    tablet ? 11 : 13
-                            }
+                            padding: tablet ? 14 : 10,
+                            maxRotation: tablet ? 35 : 0,
+                            minRotation: tablet ? 35 : 0,
+                            font: { size: tablet ? 11 : 13 }
                         }
                     },
-
                     y: {
                         beginAtZero: true,
                         max: mobile ? undefined : 1400,
-                        border: {
-                            display: true,
-                            color: '#999',
-                            width: 1
-                        },
-                        grid: {
-                            display: false
-                        },
+                        border: { display: true, color: '#999' },
+                        grid: { display: false },
                         ticks: {
                             color: '#767676',
                             autoSkip: false,
-                            padding:
-                                tablet ? 14 : 10,
-                            font: {
-                                size:
-                                    mobile ? 10 : 13
-                            }
+                            padding: tablet ? 14 : 10,
+                            font: { size: mobile ? 10 : 13 }
                         }
                     }
                 }
             }
-
         });
 
     </script>

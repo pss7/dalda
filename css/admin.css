@@ -118,7 +118,7 @@ main{display: flex; flex: 1;}
 #adminContentBox .adminDashboardChartBox{position: relative; display: flex; flex-direction: column; gap: 20px; z-index: 1;}
 #adminContentBox .adminDashboardChartBox .adminDashboardPieChart canvas{width:100% !important; height:100% !important;}
 #adminContentBox .adminDashboardChartBox .adminDashboardChartContent{display:flex; align-items:center;
-    justify-content: center; /*flex-wrap: wrap;*/ gap:32px 70px;}
+    justify-content: center;gap:32px 70px;}
 #adminContentBox .adminDashboardChartBox .adminDashboardPieChart{width:200px; height:200px;}
 #adminContentBox .adminDashboardChartBox .adminDashboardChartTopBox{margin-bottom: 24px; justify-content: space-between; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 20px;}
 #adminContentBox .adminDashboardChartBox .adminDashboardChartTopBox span{font-size: 14px; color: #505050;}
@@ -132,33 +132,8 @@ main{display: flex; flex: 1;}
 #adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText.legendColor04::before{background:#3B82F6;}
 #adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText.legendColor05::before{background:#EC4899;}
 #adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText.legendColor06::before{background:#94A3B8;}
-
-
-
-
-
-
-
-
-#adminContentBox .adminDashboardChartBox .adminDashboardBarChart{height: 203px;}
+#adminContentBox .adminDashboardChartBox .adminDashboardBarChart{height: 243px;}
 #adminContentBox .adminDashboardChartBox .adminDashboardBarChart canvas{width:100% !important; height:100% !important;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #adminContentBox .adminDashboardChartBox::after{content: ''; position: absolute; top:104px; left:-40px; right:-40px; bottom: -100%; background-color: #F3F4F6; border-radius: 30px 30px 0 0; z-index: -1;}
 #adminContentBox .adminDashboardChartRow{display: grid; grid-template-columns: 2fr 3fr; gap: 20px;}
 #adminContentBox .adminDashboardChartRow02{grid-template-columns: 3fr 2fr;}
