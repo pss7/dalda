@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/slick.css">
     <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.counterup@2.1.0/jquery.counterup.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/admin.js"></script>
@@ -73,7 +75,7 @@
                                     1월 누적 반업량 (달다 DX 집계)
                                 </h3>
                                 <span class="adminMainSummaryValue">
-                                    <strong>9,660.13</strong>
+                                    <strong class="counter">9,660.13</strong>
                                     건
                                 </span>
                             </div>
@@ -83,7 +85,7 @@
                                     금일 반입 (실시간)
                                 </h3>
                                 <span class="adminMainSummaryValue">
-                                    <strong>94.8</strong>
+                                    <strong class="counter">94.8</strong>
                                     톤
                                 </span>
                             </div>
@@ -93,7 +95,7 @@
                                     입고 차량 (당일)
                                 </h3>
                                 <span class="adminMainSummaryValue">
-                                    <strong>5</strong>
+                                    <strong class="counter">5</strong>
                                     대
                                 </span>
                             </div>
@@ -167,7 +169,7 @@
                                     </div>
 
                                 </li>
-                                  <li class="adminMainFeedItem">
+                                <li class="adminMainFeedItem">
 
                                     <div class="adminMainFeedTop">
                                         <div class="adminMainFeedInfo">
@@ -184,7 +186,7 @@
                                     </div>
 
                                 </li>
-                                  <li class="adminMainFeedItem">
+                                <li class="adminMainFeedItem">
 
                                     <div class="adminMainFeedTop">
                                         <div class="adminMainFeedInfo">
@@ -201,7 +203,7 @@
                                     </div>
 
                                 </li>
-                                  <li class="adminMainFeedItem">
+                                <li class="adminMainFeedItem">
 
                                     <div class="adminMainFeedTop">
                                         <div class="adminMainFeedInfo">
@@ -221,7 +223,7 @@
                             </ul>
                         </div>
                         <!-- //adminMainFeedBox -->
-                         
+
                     </div>
                     <!-- //adminMainBox -->
 
@@ -265,6 +267,13 @@
 
     </div>
     <!-- //adminWrap -->
+
+    <script>
+        $('.counter').counterUp({
+            delay: 10,
+            time: 1000
+        });
+    </script>
 
 </body>
 
