@@ -116,6 +116,7 @@ main{display: flex; flex: 1;}
 #adminContentBox .adminDashboardFeedBox h3{font-weight: 500; font-size: 20px; color: #111;}
 #adminContentBox .adminDashboardChartItem h3{font-weight: 500; font-size: 20px; color: #111;}
 #adminContentBox .adminDashboardChartBox{position: relative; display: flex; flex-direction: column; gap: 20px; z-index: 1;}
+#adminContentBox .adminDashboardChartBox .adminDashboardPieChart canvas{width:100% !important; height:100% !important;}
 #adminContentBox .adminDashboardChartBox .adminDashboardChartContent{display:flex; align-items:center;
     justify-content: center; /*flex-wrap: wrap;*/ gap:32px 70px;}
 #adminContentBox .adminDashboardChartBox .adminDashboardPieChart{width:200px; height:200px;}
@@ -123,7 +124,7 @@ main{display: flex; flex: 1;}
 #adminContentBox .adminDashboardChartBox .adminDashboardChartTopBox span{font-size: 14px; color: #505050;}
 #adminContentBox .adminDashboardChartBox .adminDashboardLegendList li{margin-bottom:8px;}
 #adminContentBox .adminDashboardChartBox .adminDashboardLegendList li:last-child{margin-bottom: 0;}
-#adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText{display:flex; gap:0 8px;  font-size: 14px; color: #111;}
+#adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText{display:flex; gap:0 8px;  font-size: 14px; color: #111; word-break: keep-all;}
 #adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText::before{content: ''; margin: 4px 0; width: 12px; height: 12px; border-radius: 2px;}
 #adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText.legendColor01::before{background:#8B5CF6;}
 #adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText.legendColor02::before{background:#22C55E;}
@@ -131,7 +132,6 @@ main{display: flex; flex: 1;}
 #adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText.legendColor04::before{background:#3B82F6;}
 #adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText.legendColor05::before{background:#EC4899;}
 #adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText.legendColor06::before{background:#94A3B8;}
-
 
 
 
