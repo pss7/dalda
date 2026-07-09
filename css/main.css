@@ -4,7 +4,9 @@
 #visualWrap{position: relative; height: 100vh; overflow: hidden;}
 #visualWrap .visualLayoutBox{padding-right: 190px; display: flex; align-items: flex-start; justify-content: space-between; gap: 0 26px;}
 #visualWrap .visualImgBox{position: absolute; top:0; left:0; right:0; bottom: 0;}
-#visualWrap .visualImgBox img{transform: scale(1.3); display: block; width: 100%; height: 100%; object-fit: cover; transition: all 8s;}
+#visualWrap .visualImgBox img{transform: scale(1.3); width: 100%; height: 100%; object-fit: cover; transition: all 8s;}
+#visualWrap .visualImgBox img.pc{display: block;}
+#visualWrap .visualImgBox img.m{display: none;}
 #visualWrap .visualInfoWrap{position: relative; padding-top: 10.4%;}
 #visualWrap .visualTextBox{flex-shrink: 0;}
 #visualWrap .visualTextBox .visualTitle{margin-bottom: 60px; line-height: 1.3; }
@@ -69,6 +71,7 @@
   #visualWrap .visualTextBox .visualText{font-size: 22px;}
   #visualWrap .visualLinkBox .visualLink{font-size: 18px;}
   #visualWrap .visualScrollBox{display: none;}
+  #visualWrap .visualImgBox img{object-position: 95% center;}
 
 }
 
@@ -94,6 +97,14 @@
   #visualWrap .visualInfoBox{padding-top: 133px;}
   #visualWrap .visualLinkBox{flex-direction: column;}
   
+}
+
+@media (max-width: 480px){
+
+    #visualWrap .visualImgBox img{object-position: right center;}
+    #visualWrap .visualImgBox img.pc{display: none;}
+    #visualWrap .visualImgBox img.m{display: block;}
+    
 }
 
 @media (max-width: 360px){
