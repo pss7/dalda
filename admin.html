@@ -239,9 +239,16 @@
                         <div class="adminDashboardChartRow adminDashboardChartRow02">
 
                             <div class="adminDashboardChartItem adminDashboardItem03">
-                                <h3>
-                                    1월 상순 주요 일자별 폐기물 반입 추이 차트
-                                </h3>
+                                <div class="adminDashboardChartTopBox">
+                                    <h3>
+                                        1월 상순 주요 일자별 폐기물 반입 추이 차트
+                                    </h3>
+                                </div>
+
+                                <div class="adminDashboardLineChart">
+                                    <canvas id="wasteChart"></canvas>
+                                </div>
+
                             </div>
                             <!-- //adminDashboardChartItem -->
 
@@ -340,135 +347,295 @@
 
     <script>
 
-        //원형 차트
-        const ctx = document.getElementById('processChart');
-
-        new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: [
-                    '고농도 폐수',
-                    '재활용 수지',
-                    '원배출자 물량',
-                    '관급 오니',
-                    '사급 오니',
-                    '기타(고철 등)'
-                ],
-                datasets: [{
-                    data: [28, 22, 18, 15, 10, 7],
-                    backgroundColor: [
-                        '#8B5CF6',
-                        '#22C55E',
-                        '#F59E0B',
-                        '#3B82F6',
-                        '#EC4899',
-                        '#94A3B8'
-                    ],
-                    borderWidth: 0,
-                    hoverOffset: 6
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                aspectRatio: 1,
-                cutout: '40%',
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        enabled: true
-                    }
-                }
-            }
-        });
-
-        //바 차트
-        const mobile = window.innerWidth <= 768;
-        const tablet = window.innerWidth <= 1024;
-
         const dashedGrid = {
             id: 'dashedGrid',
             beforeDraw(chart) {
+
+                const mobile = window.innerWidth <= 768;
+
                 const { ctx, chartArea, scales } = chart;
                 const scale = mobile ? scales.x : scales.y;
+
                 if (!scale) return;
+
                 ctx.save();
                 ctx.strokeStyle = '#E5E7EB';
                 ctx.lineWidth = 1;
                 ctx.setLineDash([4, 4]);
+
                 scale.ticks.forEach((_, i) => {
+
                     const pos = scale.getPixelForTick(i);
+
                     ctx.beginPath();
-                    mobile ? (ctx.moveTo(pos, chartArea.top), ctx.lineTo(pos, chartArea.bottom)) : (ctx.moveTo(chartArea.left, pos), ctx.lineTo(chartArea.right, pos));
+
+                    if (mobile) {
+                        ctx.moveTo(pos, chartArea.top);
+                        ctx.lineTo(pos, chartArea.bottom);
+                    } else {
+                        ctx.moveTo(chartArea.left, pos);
+                        ctx.lineTo(chartArea.right, pos);
+                    }
+
                     ctx.stroke();
                 });
+
                 ctx.restore();
             }
         };
 
-        new Chart(document.getElementById('companyChart'), {
-            type: 'bar',
-            plugins: [dashedGrid],
-            data: {
-                labels: [
-                    ['고농도', '폐수'],
-                    ['재활용', '합성수지'],
-                    ['원배출자', '직접계약'],
-                    ['관급', '하수오니'],
-                    ['사급', '공정오니'],
-                    ['지정', '고상 폐광유물']
-                ],
-                datasets: [{
-                    data: [1350, 1180, 960, 720, 540, 320],
-                    backgroundColor: '#2D6CD4',
-                    borderRadius: mobile ? 6 : 8,
-                    barThickness: mobile ? 20 : tablet ? 28 : undefined,
-                    maxBarThickness: 46,
-                    categoryPercentage: mobile ? .7 : tablet ? .75 : .55,
-                    barPercentage: mobile ? .8 : .85
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                animation: false,
-                indexAxis: mobile ? 'y' : 'x',
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { enabled: true }
+        function createProcessChart() {
+
+            //원형 차트
+            const ctx = document.getElementById('processChart');
+
+            processChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        '고농도 폐수',
+                        '재활용 수지',
+                        '원배출자 물량',
+                        '관급 오니',
+                        '사급 오니',
+                        '기타(고철 등)'
+                    ],
+                    datasets: [{
+                        data: [28, 22, 18, 15, 10, 7],
+                        backgroundColor: [
+                            '#8B5CF6',
+                            '#22C55E',
+                            '#F59E0B',
+                            '#3B82F6',
+                            '#EC4899',
+                            '#94A3B8'
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 6
+                    }]
                 },
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        max: mobile ? 1400 : undefined,
-                        border: { display: true, color: '#999' },
-                        grid: { display: false },
-                        ticks: {
-                            color: '#111',
-                            autoSkip: false,
-                            stepSize: 200,
-                            padding: tablet ? 14 : 10,
-                            maxRotation: tablet ? 35 : 0,
-                            minRotation: tablet ? 35 : 0,
-                            font: { size: tablet ? 11 : 13 }
-                        }
-                    },
-                    y: {
-                        beginAtZero: true,
-                        max: mobile ? undefined : 1400,
-                        border: { display: true, color: '#999' },
-                        grid: { display: false },
-                        ticks: {
-                            color: '#767676',
-                            autoSkip: false,
-                            padding: tablet ? 14 : 10,
-                            font: { size: mobile ? 10 : 13 }
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    aspectRatio: 1,
+                    cutout: '40%',
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: true
                         }
                     }
                 }
-            }
+            });
+
+        }
+
+        function createCompanyChart() {
+
+            //바 차트
+            const mobile = window.innerWidth <= 768;
+            const tablet = window.innerWidth <= 1024;
+
+            companyChart = new Chart(document.getElementById('companyChart'), {
+                type: 'bar',
+                plugins: [dashedGrid],
+                data: {
+                    labels: [
+                        ['고농도', '폐수'],
+                        ['재활용', '합성수지'],
+                        ['원배출자', '직접계약'],
+                        ['관급', '하수오니'],
+                        ['사급', '공정오니'],
+                        ['지정', '고상 폐광유물']
+                    ],
+                    datasets: [{
+                        data: [1350, 1180, 960, 720, 540, 320],
+                        backgroundColor: '#2D6CD4',
+                        borderRadius: mobile ? 6 : 8,
+                        barThickness: mobile ? 20 : tablet ? 28 : undefined,
+                        maxBarThickness: 46,
+                        categoryPercentage: mobile ? .7 : tablet ? .75 : .55,
+                        barPercentage: mobile ? .8 : .85
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: false,
+                    indexAxis: mobile ? 'y' : 'x',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: true }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: mobile ? 1400 : undefined,
+                            border: { display: true, color: '#999' },
+                            grid: { display: false },
+                            ticks: {
+                                color: '#111',
+                                autoSkip: false,
+                                stepSize: 200,
+                                padding: tablet ? 14 : 10,
+                                maxRotation: tablet ? 35 : 0,
+                                minRotation: tablet ? 35 : 0,
+                                font: { size: tablet ? 11 : 13 }
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            max: mobile ? undefined : 1400,
+                            border: { display: true, color: '#999' },
+                            grid: { display: false },
+                            ticks: {
+                                color: '#767676',
+                                autoSkip: false,
+                                padding: tablet ? 14 : 10,
+                                font: { size: mobile ? 10 : 13 }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function createWasteChart() {
+
+            // 라인 차트
+            const lineCtx = document.getElementById('wasteChart').getContext('2d');
+
+            const gradient = lineCtx.createLinearGradient(0, 0, 0, 320);
+            gradient.addColorStop(0, 'rgba(21,80,42,0.28)');
+            gradient.addColorStop(0.5, 'rgba(21,80,42,0.10)');
+            gradient.addColorStop(1, 'rgba(21,80,42,0)');
+
+            wasteChart = new Chart(lineCtx, {
+
+                type: 'line',
+                plugins: [dashedGrid],
+                data: {
+
+                    labels: [
+                        '01-01',
+                        '01-02',
+                        '01-03',
+                        '01-04',
+                        '01-05',
+                        '01-06',
+                        '01-07',
+                        '01-08',
+                        '01-09',
+                        '01-10',
+                        '01-11',
+                        '01-12'
+                    ],
+
+                    datasets: [{
+                        data: [120, 180, 90, 210, 160, 240, 190, 280, 220, 260, 180, 230],
+                        borderColor: '#15502A',
+                        borderWidth: 1,
+                        backgroundColor: gradient,
+                        fill: true,
+                        pointRadius: 3,
+                        pointHoverRadius: 5,
+                        pointBackgroundColor: '#15502A',
+                        pointBorderColor: '#15502A',
+                        pointBorderWidth: 2
+                    }]
+                },
+
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: true
+                        }
+                    },
+
+                    scales: {
+                        x: {
+
+                            border: {
+                                display: true,
+                                color: '#999999',
+                                width: 1
+                            },
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: '#111111',
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        },
+
+                        y: {
+                            min: 0,
+                            max: 350,
+                            ticks: {
+                                stepSize: 50,
+                                color: '#767676',
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            border: {
+                                display: true,
+                                color: '#999999',
+                                width: 1
+                            },
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        let processChart;
+        let companyChart;
+        let wasteChart;
+
+        function initCharts() {
+            createProcessChart();
+            createCompanyChart();
+            createWasteChart();
+        }
+
+        function initCharts() {
+
+            if (processChart) processChart.destroy();
+            if (companyChart) companyChart.destroy();
+            if (wasteChart) wasteChart.destroy();
+
+            createProcessChart();
+            createCompanyChart();
+            createWasteChart();
+        }
+
+        initCharts();
+
+        let resizeTimer;
+
+        window.addEventListener('resize', () => {
+
+            clearTimeout(resizeTimer);
+
+            resizeTimer = setTimeout(() => {
+                initCharts();
+            }, 200);
+
         });
 
         $('.counter').counterUp({

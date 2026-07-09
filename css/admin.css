@@ -135,6 +135,8 @@ main{display: flex; flex: 1;}
 #adminContentBox .adminDashboardChartBox .adminDashboardLegendList li .adminDashboardLegendText.legendColor06::before{background:#94A3B8;}
 #adminContentBox .adminDashboardChartBox .adminDashboardBarChart{height: 203px;}
 #adminContentBox .adminDashboardChartBox .adminDashboardBarChart canvas{width:100% !important; height:100% !important;}
+#adminContentBox .adminDashboardChartBox .adminDashboardBarChart{height: 203px;}
+#adminContentBox .adminDashboardChartBox .adminDashboardLineChart{height: 200PX;}
 #adminContentBox .adminDashboardChartBox::after{content: ''; position: absolute; top:104px; left:-40px; right:-40px; bottom: -100%; background-color: #F3F4F6; border-radius: 30px 30px 0 0; z-index: -1;}
 #adminContentBox .adminDashboardChartRow{display: grid; grid-template-columns: 2fr 3fr; gap: 20px;}
 #adminContentBox .adminDashboardChartRow02{grid-template-columns: 3fr 2fr;}
