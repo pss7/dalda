@@ -369,7 +369,7 @@
 }
 
 /* 폼 영역 */
-#formWrap{padding: 120px 0 60px; background-color: #2A2B2C; overflow-x: hidden;}
+#formWrap{padding: 120px 0 60px; background-color: #2A2B2C; overflow-x:  hidden;}
 #formWrap .formTextBox{margin-bottom: 48px;}
 #formWrap .formBox{padding: 60px 100px; background-color: #F4F5F6; border-radius: 32px;}
 #formWrap .formTitle{margin-bottom: 24px; font-weight: 600; font-size: 48px; color: #333; line-height: 1.3; letter-spacing: -1px;}
