@@ -3,7 +3,7 @@
 #main{overflow-x: hidden;}
 
 /* 비주얼영역 */
-#visualWrap{position: relative; height: 100vh; overflow: hidden;}
+#visualWrap{position: relative; height: 100vh;  overflow: hidden;}
 #visualWrap .visualLayoutBox{padding-right: 190px; display: flex; align-items: flex-start; justify-content: space-between; gap: 0 26px;}
 #visualWrap .visualImgBox{position: absolute; top:0; left:0; right:0; bottom: 0;}
 #visualWrap .visualImgBox img{transform: scale(1.3); width: 100%; height: 100%; object-fit: cover; transition: all 8s;}
