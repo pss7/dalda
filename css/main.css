@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+#main{overflow-x: hidden;}
+
 /* 비주얼영역 */
 #visualWrap{position: relative; height: 100vh; overflow: hidden;}
 #visualWrap .visualLayoutBox{padding-right: 190px; display: flex; align-items: flex-start; justify-content: space-between; gap: 0 26px;}
@@ -115,7 +117,7 @@
 }
 
 /* 안내영역 */
-#infoWrap{position: relative; padding: 160px 20px 190px max(20px, calc(50% - 692px));; background-color: #F8FAF9; z-index: 1;}
+#infoWrap{position: relative; padding: 160px 0 190px; background-color: #F8FAF9; z-index: 1;}
 #infoWrap::after{content: ''; width: 1068px; height: 459px; position: absolute; right:0; bottom: 0; background: url(../images/main/dalda_img.png)no-repeat center / contain; z-index: -1;}
 #infoWrap .infoBox{display: flex; align-items: center; justify-content:center;}
 #infoWrap .infoTextBox{flex:0 0 auto; }
